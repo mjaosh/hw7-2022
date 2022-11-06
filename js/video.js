@@ -49,11 +49,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 	if (video.volume == 0){
 		video.volume = volume
 		document.querySelector("#volume").innerHTML = (video.volume * 100) + '%'
+		document.querySelector("#slider").value = volume * 100
+
+
 	} else {
 		volume = video.volume
 		console.log("mute Video");
 		video.volume = 0
 		document.querySelector("#volume").innerHTML = 0 + '%'
+		document.querySelector("#slider").value = 0
+
 	} 
 	console.log(video.volume * 100)
 
@@ -69,7 +74,7 @@ document.querySelector("#vintage").addEventListener("click", function() {
 	if (document.querySelector("#player1").className == "oldSchool") {
 		document.querySelector("#player1").className = "video"
 	}else{
-		document.querySelector("#player1").className = "oldSchool"
+		document.querySelector("video").className = "oldSchool"
 	} 
 
 }); 
