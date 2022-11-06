@@ -46,19 +46,18 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if (video.volume == 0){
-		video.volume = volume
+	if (video.muted == true){
+		video.muted = false;
 		document.querySelector("#volume").innerHTML = (video.volume * 100) + '%'
 		document.querySelector("#slider").value = volume * 100
 
 
 	} else {
-		volume = video.volume
 		console.log("mute Video");
-		video.volume = 0
+		volume = video.volume
+		video.muted = true;
 		document.querySelector("#volume").innerHTML = 0 + '%'
 		document.querySelector("#slider").value = 0
-
 	} 
 	console.log(video.volume * 100)
 
