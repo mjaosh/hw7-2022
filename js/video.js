@@ -48,6 +48,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true){
 		video.muted = false;
+		document.querySelector("#mute").innerHTML = "Mute"
 		document.querySelector("#volume").innerHTML = (video.volume * 100) + '%'
 		document.querySelector("#slider").value = volume * 100
 
@@ -56,6 +57,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 		console.log("mute Video");
 		volume = video.volume
 		video.muted = true;
+		document.querySelector("#mute").innerHTML = "Unmute"
 		document.querySelector("#volume").innerHTML = 0 + '%'
 		document.querySelector("#slider").value = 0
 	} 
